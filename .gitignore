@@ -1,0 +1,8 @@
+# Ignore build artifacts
+test-results/
+*.log
+*.tmp
+*.temp
+*.json
+*.txt
+*.zip
