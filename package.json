@@ -1,0 +1,26 @@
+{
+  "name": "testeoutsera-1",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/OGaldino/TesteOutSera.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/OGaldino/TesteOutSera/issues"
+  },
+  "homepage": "https://github.com/OGaldino/TesteOutSera#readme",
+  "description": "",
+  "devDependencies": {
+    "@playwright/test": "^1.55.1",
+    "@types/node": "^24.6.2",
+    "allure-commandline": "^2.34.1",
+    "allure-playwright": "^3.4.1"
+  }
+}
