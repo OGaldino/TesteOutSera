@@ -3,7 +3,10 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "test:e2e": "cucumber-js",
+    "generate:report": "node generate-report.js",
+    "run:all:e2e": "npm run test:e2e && npm run generate:report"
   },
   "repository": {
     "type": "git",
@@ -16,11 +19,29 @@
     "url": "https://github.com/OGaldino/TesteOutSera/issues"
   },
   "homepage": "https://github.com/OGaldino/TesteOutSera#readme",
-  "description": "",
   "devDependencies": {
+    "@cucumber/cucumber": "^12.2.0",
     "@playwright/test": "^1.55.1",
     "@types/node": "^24.6.2",
     "allure-commandline": "^2.34.1",
-    "allure-playwright": "^3.4.1"
-  }
+    "allure-playwright": "^3.4.1",
+    "cucumber-html-reporter": "^7.2.0",
+    "expect": "^30.2.0",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.9.3"
+  },
+  "directories": {
+    "test": "tests"
+  },
+  "dependencies": {
+    "allure-js-commons": "^3.4.1",
+    "charenc": "^0.0.2",
+    "crypt": "^0.0.2",
+    "is-buffer": "^1.1.6",
+    "md5": "^2.3.0",
+    "playwright": "^1.55.1",
+    "playwright-core": "^1.55.1",
+    "undici-types": "^7.13.0"
+  },
+  "description": ""
 }
