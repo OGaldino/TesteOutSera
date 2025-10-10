@@ -5,7 +5,7 @@ import { expectStandardJsonHeaders, attachJson } from './helpers';
 test.describe('Tarefa 2 - CRUD e validações completas', () => {
     test('Sanity: GET /users/2 com x-api-key deve parecer user', async ({ request, baseURL }) => {
         const url = `${baseURL}/users/2`;
-        const res = await request.get(url); // baseURL já inclui /api
+        const res = await request.get(url);
 
         await test.info().attach('effective-url', {
             body: Buffer.from(res.url()),
@@ -48,12 +48,11 @@ test.describe('Tarefa 2 - CRUD e validações completas', () => {
         await attachJson('POST-users-payload', payload);
         await attachJson('POST-users-response', json);
 
-        // Validações do corpo
         expect(json).toMatchObject({
             name: 'morpheus',
             job: 'leader',
             id: expect.any(String),
-            createdAt: expect.stringMatching(/Z$/) // ISO timestamp
+            createdAt: expect.stringMatching(/Z$/) 
         });
     });
 
