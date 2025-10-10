@@ -6,7 +6,6 @@ export class CartPage extends BasePage {
     super(page);
   }
 
-  // Locators para SauceDemo
   private readonly cartItems = this.page.locator('.cart_item');
   private readonly checkoutButton = this.page.locator('[data-test="checkout"]');
   private readonly productQuantityText = (productName: string) => this.page.locator(`.cart_item:has-text("${productName}") .cart_quantity`);

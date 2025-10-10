@@ -4,13 +4,13 @@ export async function expectStandardJsonHeaders(
   res: APIResponse,
   opts: { requireDate?: boolean } = {}
 ) {
-  const headers = res.headers(); // chaves em minúsculas
+  const headers = res.headers(); 
   const contentType = headers['content-type'] || '';
 
-  // Deve ser JSON (aceita charset)
+
   expect(contentType.toLowerCase()).toContain('application/json');
 
-  // Aceita content-length OU transfer-encoding: chunked
+
   const hasContentLength = Object.prototype.hasOwnProperty.call(headers, 'content-length');
   const hasChunked =
     typeof headers['transfer-encoding'] === 'string' &&
@@ -20,19 +20,15 @@ export async function expectStandardJsonHeaders(
     hasContentLength || hasChunked
   ).toBeTruthy();
 
-  // Se vier compactado, aceitar valores comuns
   if (headers['content-encoding']) {
     const enc = headers['content-encoding'].toLowerCase();
     expect(['gzip', 'br', 'deflate']).toContain(enc);
   }
-
-  // Date costuma existir (como no seu response). Deixe opcional se quiser rodar em mocks.
   if (opts.requireDate !== false) {
     expect(headers).toHaveProperty('date');
   }
 }
 
-// Se já tiver attachJson/attachText, mantenha como estão
 export async function attachJson(name: string, data: unknown) {
   await test.info().attach(name, {
     body: Buffer.from(JSON.stringify(data, null, 2)),

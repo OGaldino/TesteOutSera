@@ -6,13 +6,13 @@ export class CheckoutPage extends BasePage {
     super(page);
   }
 
-  // Locators para SauceDemo - Step One (Dados de Entrega)
+  // Entraga do SouceDemo
   private readonly firstNameInput = this.page.locator('[data-test="firstName"]');
   private readonly lastNameInput = this.page.locator('[data-test="lastName"]');
   private readonly postalCodeInput = this.page.locator('[data-test="postalCode"]');
   private readonly continueButton = this.page.locator('[data-test="continue"]');
 
-  // Locators para SauceDemo - Step Two (Visão Geral)
+  // Visão geral SauceDemo
   private readonly finishButton = this.page.locator('[data-test="finish"]');
 
   async fillShippingDetails(firstName: string, lastName: string, postalCode: string) {

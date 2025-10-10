@@ -6,8 +6,8 @@ export class DashboardPage extends BasePage {
     super(page);
   }
 
-  // Selectors
-  private readonly welcomeMessage = this.page.locator('.welcome-banner'); // Exemplo
+  // Seletores
+  private readonly welcomeMessage = this.page.locator('.welcome-banner');
   private readonly specificFormLink = this.page.locator('a[href="/form"]');
 
   async expectOnDashboard() {
@@ -17,7 +17,7 @@ export class DashboardPage extends BasePage {
 
   async navigateToSpecificForm() {
     await this.specificFormLink.click();
-    await expect(this.page).toHaveURL(/.*\/form/); // Valida a URL
-    await expect(this.page.locator('h1')).toContainText('Formulário de Detalhes'); // Valida um elemento na página do formulário
+    await expect(this.page).toHaveURL(/.*\/form/);
+    await expect(this.page.locator('h1')).toContainText('Formulário de Detalhes');
   }
 }

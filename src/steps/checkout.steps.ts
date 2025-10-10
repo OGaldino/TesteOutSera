@@ -3,7 +3,7 @@ import { Given, When, Then, DataTable, setDefaultTimeout } from '@cucumber/cucum
 import { expect } from '@playwright/test';
 import { Browser, Page, chromium } from 'playwright';
 
-import { LoginPage } from '../pages/LoginPage'; // Necessário para o step 'Dado que estou logado'
+import { LoginPage } from '../pages/LoginPage'; 
 import { ProductListPage } from '../pages/ProductListPage';
 import { CartPage } from '../pages/CartPage';
 import { CheckoutPage } from '../pages/CheckoutPage';
@@ -19,7 +19,6 @@ let cartPage: CartPage;
 let checkoutPage: CheckoutPage;
 let orderConfirmationPage: OrderConfirmationPage;
 
-// --- GIVEN ---
 Given('que estou logado no SauceDemo', async function () {
   browser = await chromium.launch({ headless: true });
   page = await browser.newPage();
@@ -31,17 +30,16 @@ Given('que estou logado no SauceDemo', async function () {
 
   await loginPage.gotoLoginPage();
   await loginPage.login('standard_user', 'secret_sauce');
-  await productListPage.expectOnProductListPage(); // Validar que está na página de produtos
+  await productListPage.expectOnProductListPage();
 });
 
-// --- WHEN ---
 When('eu adiciono {string} ao carrinho', async function (productName: string) {
   await productListPage.addProductToCart(productName);
 });
 
 When('eu visualizo o carrinho de compras', async function () {
   await productListPage.goToCart();
-  await cartPage.expectProductInCart('Sauce Labs Backpack', 1); // Validar o produto adicionado
+  await cartPage.expectProductInCart('Sauce Labs Backpack', 1);
 });
 
 When('eu continuo para o checkout', async function () {
@@ -57,13 +55,12 @@ When('eu finalizo a compra', async function () {
   await checkoutPage.finalizeOrder();
 });
 
-// --- THEN ---
 Then('eu devo ver uma mensagem de {string}', async function (expectedMessage: string) {
   await orderConfirmationPage.expectSuccessMessage(expectedMessage);
 });
 
 Then('eu devo estar na página de confirmação de pedido', async function () {
   await expect(page).toHaveURL('https://www.saucedemo.com/checkout-complete.html');
-  await orderConfirmationPage.expectOrderNumber(); // Validação adicional de texto na página
-  await browser.close(); // Fechar o navegador ao final do cenário
+  await orderConfirmationPage.expectOrderNumber();
+  await browser.close();
 });
