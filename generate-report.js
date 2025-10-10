@@ -14,7 +14,7 @@ const options = {
     "Test Environment": "STG",
     "Browser": "Chromium",
     "Platform": "Windows 10 / macOS",
-    "Executed by": "QA Team"
+    "Executed by": "Ozéas QA"
   }
 };
 
