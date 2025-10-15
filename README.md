@@ -82,14 +82,13 @@ Para executar todos os testes E2E e, em seguida, gerar o relatório HTML:
 ```bash
 npm run run:all:e2e
 
-### 🧪 Testes API 
+### 🧪PARA OS TESTE DE API 
 
 Para executar todos os testes API  e, em seguida, gerar o relatório HTML:
 
 ```bash
+Para Executar
 npx playwright test
 
-npx playwright test show-report
-
-Para gerar relatório 
+Para Gerar relatório 
 npx playwright show-report

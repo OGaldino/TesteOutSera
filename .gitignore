@@ -3,6 +3,7 @@ test-results/
 *.log
 *.tmp
 *.temp
+*.json
 *.txt
 *.zip
 node_modules
