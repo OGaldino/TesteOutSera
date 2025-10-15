@@ -1,19 +1,19 @@
 import { Page, expect } from '@playwright/test';
 import { BasePage } from './BasePage';
+import { AppUrls } from '../config/urls';
 
 export class LoginPage extends BasePage {
   constructor(page: Page) {
     super(page);
   }
 
-  // Locators para SauceDemo
-  private readonly usernameInput = this.page.locator('[data-test="username"]');
-  private readonly passwordInput = this.page.locator('[data-test="password"]');
-  private readonly loginButton = this.page.locator('[data-test="login-button"]');
-  private readonly errorMessage = this.page.locator('[data-test="error"]');
+  private readonly usernameInput = this.page.locator('#user-name'); 
+  private readonly passwordInput = this.page.locator('#password');   
+  private readonly loginButton = this.page.locator('#login-button');
+  private readonly errorMessage = this.page.locator('#error-message'); 
 
   async gotoLoginPage() {
-    await this.navigateTo('https://www.saucedemo.com/');
+    await this.navigateTo(AppUrls.SAUCE_DEMO_LOGIN);
     await expect(this.loginButton).toBeVisible();
   }
 
@@ -24,7 +24,7 @@ export class LoginPage extends BasePage {
   }
 
   async expectLoggedInSuccessfully() {
-    await expect(this.page).toHaveURL('https://www.saucedemo.com/inventory.html');
+    await expect(this.page).toHaveURL(AppUrls.SAUCE_DEMO_PRODUCTS);
   }
 
   async expectErrorMessage(message: string) {

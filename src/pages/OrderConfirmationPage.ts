@@ -7,8 +7,8 @@ export class OrderConfirmationPage extends BasePage {
   }
 
   // Localizadores SauceDemo
-  private readonly completeHeader = this.page.locator('.complete-header');
-  private readonly completeText = this.page.locator('.complete-text');
+  private readonly completeHeader = this.page.locator('#checkout_complete_container');
+  private readonly completeText = this.page.locator('#checkout_complete_container .complete-text');
 
   async expectSuccessMessage(message: string) {
     await expect(this.completeHeader).toBeVisible();
