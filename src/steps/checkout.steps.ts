@@ -1,5 +1,5 @@
 // src/steps/checkout.steps.ts
-import { Given, When, Then, DataTable, setDefaultTimeout } from '@cucumber/cucumber';
+import { Given, When, Then, DataTable } from '@cucumber/cucumber';
 import { expect } from '@playwright/test';
 import { Browser, Page, chromium } from 'playwright';
 
@@ -9,9 +9,7 @@ import { CartPage } from '../pages/CartPage';
 import { CheckoutPage } from '../pages/CheckoutPage';
 import { OrderConfirmationPage } from '../pages/OrderConfirmationPage';
 
-setDefaultTimeout(60 * 1000);
 
-let browser: Browser;
 let page: Page;
 let loginPage: LoginPage;
 let productListPage: ProductListPage;
@@ -20,13 +18,11 @@ let checkoutPage: CheckoutPage;
 let orderConfirmationPage: OrderConfirmationPage;
 
 Given('que estou logado no SauceDemo', async function () {
-  browser = await chromium.launch({ headless: true });
-  page = await browser.newPage();
-  loginPage = new LoginPage(page);
-  productListPage = new ProductListPage(page);
-  cartPage = new CartPage(page);
-  checkoutPage = new CheckoutPage(page);
-  orderConfirmationPage = new OrderConfirmationPage(page);
+  loginPage = new LoginPage(this.page);
+  productListPage = new ProductListPage(this.page);
+  cartPage = new CartPage(this.page);
+  checkoutPage = new CheckoutPage(this.page);
+  orderConfirmationPage = new OrderConfirmationPage(this.page);
 
   await loginPage.gotoLoginPage();
   await loginPage.login('standard_user', 'secret_sauce');
@@ -60,7 +56,6 @@ Then('eu devo ver uma mensagem de {string}', async function (expectedMessage: st
 });
 
 Then('eu devo estar na página de confirmação de pedido', async function () {
-  await expect(page).toHaveURL('https://www.saucedemo.com/checkout-complete.html');
+  await expect(this.page).toHaveURL('https://www.saucedemo.com/checkout-complete.html');
   await orderConfirmationPage.expectOrderNumber();
-  await browser.close();
 });

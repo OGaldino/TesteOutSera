@@ -1,18 +1,17 @@
 import { Page, expect } from '@playwright/test';
 import { BasePage } from './BasePage';
+import { AppUrls } from '../config/urls';
 
 export class CheckoutPage extends BasePage {
   constructor(page: Page) {
     super(page);
   }
 
-  // Entraga do SouceDemo
-  private readonly firstNameInput = this.page.locator('[data-test="firstName"]');
-  private readonly lastNameInput = this.page.locator('[data-test="lastName"]');
-  private readonly postalCodeInput = this.page.locator('[data-test="postalCode"]');
+  private readonly firstNameInput = this.page.locator('#first-name');
+  private readonly lastNameInput = this.page.locator('#last-name');
+  private readonly postalCodeInput = this.page.locator('#postal-code');
   private readonly continueButton = this.page.locator('[data-test="continue"]');
 
-  // Visão geral SauceDemo
   private readonly finishButton = this.page.locator('[data-test="finish"]');
 
   async fillShippingDetails(firstName: string, lastName: string, postalCode: string) {
@@ -20,11 +19,11 @@ export class CheckoutPage extends BasePage {
     await this.lastNameInput.fill(lastName);
     await this.postalCodeInput.fill(postalCode);
     await this.continueButton.click();
-    await expect(this.page).toHaveURL('https://www.saucedemo.com/checkout-step-two.html');
+    await expect(this.page).toHaveURL(AppUrls.SAUCE_DEMO_CHECKOUT_STEP_TWO);
   }
 
   async finalizeOrder() {
     await this.finishButton.click();
-    await expect(this.page).toHaveURL('https://www.saucedemo.com/checkout-complete.html');
+    await expect(this.page).toHaveURL(AppUrls.SAUCE_DEMO_CHECKOUT_COMPLETE);
   }
 }
