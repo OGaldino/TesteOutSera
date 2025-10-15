@@ -1,6 +1,6 @@
 [
   {
-    "description": "  Como um cliente de e-commerce\n  Eu quero adicionar produtos ao carrinho, preencher dados e finalizar a compra\n  Para que eu possa \"comprar\" meus produtos ",
+    "description": " Como um cliente de e-commerce\n  Eu quero adicionar produtos ao carrinho, preencher dados e finalizar a compra\n  Para que eu possa \"comprar\" meus produtos ",
     "elements": [
       {
         "description": "",
@@ -14,7 +14,7 @@
             "hidden": true,
             "result": {
               "status": "passed",
-              "duration": 53385600
+              "duration": 53008299
             }
           },
           {
@@ -27,7 +27,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 546136500
+              "duration": 530880400
             }
           },
           {
@@ -40,7 +40,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 53784000
+              "duration": 52506400
             }
           },
           {
@@ -53,7 +53,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 53688200
+              "duration": 55775399
             }
           },
           {
@@ -66,7 +66,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 41733799
+              "duration": 55435899
             }
           },
           {
@@ -98,7 +98,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 65573800
+              "duration": 68394699
             }
           },
           {
@@ -111,7 +111,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 46807999
+              "duration": 49613399
             }
           },
           {
@@ -124,7 +124,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 10355799
+              "duration": 6734599
             }
           },
           {
@@ -137,7 +137,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 9582699
+              "duration": 9196100
             }
           },
           {
@@ -145,7 +145,7 @@
             "hidden": true,
             "result": {
               "status": "passed",
-              "duration": 8456499
+              "duration": 8289000
             }
           }
         ],
@@ -175,7 +175,7 @@
             "hidden": true,
             "result": {
               "status": "passed",
-              "duration": 35075200
+              "duration": 39102300
             }
           },
           {
@@ -188,7 +188,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 408198600
+              "duration": 430891200
             }
           },
           {
@@ -201,7 +201,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 78130100
+              "duration": 85179199
             }
           },
           {
@@ -214,7 +214,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 14694899
+              "duration": 13326699
             }
           },
           {
@@ -222,7 +222,7 @@
             "hidden": true,
             "result": {
               "status": "passed",
-              "duration": 6907099
+              "duration": 6980300
             }
           }
         ],

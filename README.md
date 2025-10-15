@@ -75,21 +75,16 @@ A estrutura do projeto está organizada da seguinte forma:
 
 O projeto utiliza scripts `npm` para facilitar a execução dos testes.
 
-### 🧪 Testes E2E (End-to-End)
+### 🧪 Testes E2E (End-to-End) & API
 
 Para executar todos os testes E2E e, em seguida, gerar o relatório HTML:
 
-```bash
+```bash (End-to-End)
 npm run run:all:e2e
-
-### 🧪 Testes API 
 
 Para executar todos os testes API  e, em seguida, gerar o relatório HTML:
 
 ```bash
 npx playwright test
 
-npx playwright test show-report
-
-Para gerar relatório 
 npx playwright show-report
