@@ -1,5 +1,6 @@
 import { Page, expect } from '@playwright/test';
 import { BasePage } from './BasePage';
+import { AppUrls } from '../config/urls';
 
 export class CartPage extends BasePage {
   constructor(page: Page) {
@@ -21,6 +22,6 @@ export class CartPage extends BasePage {
 
   async proceedToCheckout() {
     await this.checkoutButton.click();
-    await expect(this.page).toHaveURL('https://www.saucedemo.com/checkout-step-one.html');
+    await expect(this.page).toHaveURL(AppUrls.SAUCE_DEMO_CHECKOUT_STEP_ONE);
   }
 }

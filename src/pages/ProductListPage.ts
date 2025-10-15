@@ -1,5 +1,6 @@
 import { Page, expect } from '@playwright/test';
 import { BasePage } from './BasePage';
+import { AppUrls } from '../config/urls';
 
 export class ProductListPage extends BasePage {
   constructor(page: Page) {
@@ -13,11 +14,11 @@ export class ProductListPage extends BasePage {
   
   private readonly productInventoryButton = (productName: string) => this.productCard(productName).locator('.btn_inventory');
 
-  private readonly cartIcon = this.page.locator('.shopping_cart_link');
-  private readonly cartBadge = this.page.locator('.shopping_cart_badge');
+  private readonly cartIcon = this.page.locator('#shopping_cart_container');
+  private readonly cartBadge = this.page.locator('#shopping_cart_container .shopping_cart_badge');
 
   async expectOnProductListPage() {
-    await expect(this.page).toHaveURL('https://www.saucedemo.com/inventory.html'); 
+    await expect(this.page).toHaveURL(AppUrls.SAUCE_DEMO_PRODUCTS); 
     await expect(this.inventoryPageTitle).toHaveText('Products');
   }
 
@@ -32,6 +33,6 @@ export class ProductListPage extends BasePage {
 
   async goToCart() {
     await this.cartIcon.click();
-    await expect(this.page).toHaveURL('https://www.saucedemo.com/cart.html');
+    await expect(this.page).toHaveURL(AppUrls.SOUCE_DEMO_CART);
   }
 }

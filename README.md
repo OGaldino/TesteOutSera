@@ -87,6 +87,8 @@ npm run run:all:e2e
 Para executar todos os testes API  e, em seguida, gerar o relatório HTML:
 
 ```bash
+npx playwright test
+
 npx playwright test show-report
 
 Para gerar relatório 
