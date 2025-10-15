@@ -1,6 +1,6 @@
-# Teste Outsera API & E2E
+# Teste Outsera API
 
-Um projeto de automação de testes utilizando Playwright e Cucumber para End-to-End (E2E), com foco em TypeScript, e estrutura para automação de testes de API.
+Um projeto de automação de testes de API.
 
 ## 🚀 Autor
 
@@ -8,9 +8,7 @@ Um projeto de automação de testes utilizando Playwright e Cucumber para End-to
 
 ## 🌟 Visão Geral do Projeto
 
-Este projeto visa estabelecer uma base sólida para a automação de testes em aplicações web e APIs. Utilizando a metodologia Behavior-Driven Development (BDD) com Cucumber, ele permite escrever testes em uma linguagem clara e de fácil compreensão para todas as partes interessadas (stakeholders).
-
-O foco principal é garantir a qualidade e a estabilidade das funcionalidades críticas da aplicação através de testes E2E com Playwright e preparar o terreno para a validação de APIs.
+Validação de APIs.
 
 ## ⚙️ Tecnologias Utilizadas
 
@@ -19,8 +17,7 @@ O foco principal é garantir a qualidade e a estabilidade das funcionalidades cr
 | **Node.js**         | Ambiente de tempo de execução JavaScript.                                      |
 | **TypeScript**      | Superconjunto tipado de JavaScript que melhora a manutenibilidade do código.   |
 | **Playwright**      | Framework de automação de navegadores (Chromium, Firefox, WebKit) para E2E.    |
-| **Cucumber.js**     | Framework BDD que permite escrever especificações executáveis em linguagem Gherkin.|
-| **cucumber-html-reporter** | Gerador de relatórios HTML bonitos a partir dos resultados do Cucumber JSON. |
+| JSON. |
 | **ts-node**         | Executa arquivos TypeScript diretamente no Node.js sem pré-compilação.         |
 | **Visual Studio Code** | Editor de código recomendado para desenvolvimento.                             |
 
@@ -28,9 +25,7 @@ O foco principal é garantir a qualidade e a estabilidade das funcionalidades cr
 
 As principais dependências e devDependencies estão listadas no `package.json`:
 
-*   `@cucumber/cucumber`: Framework Cucumber para BDD.
 *   `@playwright/test`: Biblioteca Playwright para automação de testes de navegador.
-*   `cucumber-html-reporter`: Ferramenta para gerar relatórios HTML detalhados dos testes Cucumber.
 *   `ts-node`: Permite executar arquivos TypeScript diretamente.
 *   `typescript`: Compilador TypeScript.
 
@@ -73,23 +68,13 @@ A estrutura do projeto está organizada da seguinte forma:
 
 ## 📝 Como Executar os Testes
 
-O projeto utiliza scripts `npm` para facilitar a execução dos testes.
+O projeto utiliza scripts `npx` para facilitar a execução dos testes.
 
-### 🧪 Testes E2E (End-to-End)
-
-Para executar todos os testes E2E e, em seguida, gerar o relatório HTML:
-
-```bash
-npm run run:all:e2e
-
-### 🧪 Testes API 
+### 🧪 Testes API
 
 Para executar todos os testes API  e, em seguida, gerar o relatório HTML:
 
 ```bash
 npx playwright test
 
-npx playwright test show-report
-
-Para gerar relatório 
 npx playwright show-report
